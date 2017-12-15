@@ -1,0 +1,16 @@
+{
+  "name": "campgrounds",
+  "author": "Lauren Yeiser",
+  "version": "0.0.1",
+  "descriptions": "a simple api for campground app",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.7"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.13.7"
+  }
+}
