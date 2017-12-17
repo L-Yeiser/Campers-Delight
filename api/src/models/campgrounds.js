@@ -8,7 +8,7 @@ var CampgroundSchema = new Schema({
   name: {
     type: String,
   },
-  desciption: {
+  description: {
     type: String,
   },
   state: {
