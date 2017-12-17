@@ -1,0 +1,21 @@
+<div class="grid--flex">
+  <div class="col-1-3">
+    <nav class="navigation navigation__left">
+      <ul class="navigation__list">
+        {{#each model as |campground|}}
+          {{#link-to "campgrounds.campground" campground tagName='li' class="navigation__list__item"}}
+            {{campground.name}}
+          {{/link-to}}
+        {{/each}}
+      </ul>
+      <button {{action set "isShowingNewModal" true}}class="btn btn--dark navigation__list__action">Add New</button>
+    </nav>
+  </div>
+  <div class="col-2-3">
+    {{outlet}}
+  </div>
+</div>
+
+{{new-campground-modal
+  isShowingModal=isShowingNewModal
+  afterAction=(action transitionToRoute "campgrounds.campground")}}

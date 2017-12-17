@@ -1,0 +1,13 @@
+extends:
+- ./node_modules/lytics-js-styleguide/.eslintrc
+env:
+  browser: true
+  builtin: true
+parserOptions:
+  ecmaVersion: 8
+  sourceType: module
+rules:
+  no-unused-expressions:
+  - error
+  new-cap:
+  - error

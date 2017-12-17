@@ -1,0 +1,51 @@
+{{#if isShowingModal}}
+  {{#modal-dialog
+    close=(action "closeModal")
+    translucentOverlay=true}}
+    <div class="form">
+      <div class="form__group">
+        <span class="form__group__label">Name</span>
+        {{one-way-input
+          class="form__group--grow form__group__input"
+          value=newCampground.name
+          update=(action set "newCampground.name")}}
+      </div>
+      <div class="form__group">
+        <span class="form__group__label">Description</span>
+        {{one-way-textarea
+          class="form__group--grow form__group__input"
+          value=newCampground.description
+          update=(action set "newCampground.description")}}
+      </div>
+      <div class="form__group">
+        <span class="form__group__label">Bathroom?</span>
+        {{one-way-checkbox
+          value=newCampground.hasBathroom
+          update=(action set "newCampground.hasBathroom")}}
+
+        <span class="form__group__label util-ml">Shower?</span>
+        {{one-way-checkbox
+          value=newCampground.hasShower
+          update=(action set "newCampground.hasShower")}}
+      </div>
+    </div>
+    <div class="util-divider"></div>
+    <div class="form">
+      <h3 class="form__heading">Rate this campground</h3>
+      <div class="form__group">
+        {{star-rating rating.value
+          numStars=5
+          baseColor="#fff"
+          fillColor="#006A8F"
+          onClick=(action set "rating.value")}}
+      </div>
+      <div class="form__group">
+        {{one-way-textarea
+          class="form__group--grow form__group__input"
+          value=rating.description
+          update=(action set "rating.description")}}
+      </div>
+    </div>
+    <button class="btn btn--blue util-pull-right" {{action "addCampground"}}>Add Campground</button>
+  {{/modal-dialog}}
+{{/if}}

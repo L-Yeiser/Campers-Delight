@@ -1,0 +1,29 @@
+.ember-modal-overlay {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: 800;
+}
+
+.ember-modal-overlay.translucent {
+  background-color:fade(@gray-light, 80%);
+}
+
+.ember-modal-dialog {
+  transition:all 0.2s ease-out;
+  position: fixed;
+  top:25%;
+  width: 100%;
+  left:50%;
+  background:@background-green;
+  color:@gray-dark;
+  padding:@spacing-unit*3;
+  width:500px;
+
+}
+
+
+.ember-modal-dialog.slide.in {
+  transform: translate(0,0);
+}
